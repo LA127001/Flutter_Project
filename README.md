@@ -1,6 +1,10 @@
 # profile
 
-A new Flutter project.
+A create Profile Page
+
+<img width="200" height="600" alt="Profile UI" src="https://github.com/user-attachments/assets/81021727-ec47-4296-b7e3-5db656b60f42" />
+
+
 
 ## Getting Started
 
