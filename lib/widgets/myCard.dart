@@ -5,12 +5,14 @@ class MyWidget extends StatelessWidget {
   final String title;
   final dynamic leadingIcon;
   final String? trailingText;
+  final VoidCallback? onTap;
   // final IconData trailingIcon;
   const MyWidget({
     super.key,
     required this.title,
     required this.leadingIcon,
     this.trailingText,
+    this.onTap,
     // required this.trailingIcon,
   });
 
@@ -19,38 +21,50 @@ class MyWidget extends StatelessWidget {
     return Padding(
       padding: .all(16),
       child: InkWell(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                // Icon(leadingIcon, size: 24),
-                HugeIcon(icon: leadingIcon, size: 24, color: Colors.black,),
-                SizedBox(width: 12),
+        onTap: onTap,
+        borderRadius: .circular(23),
+        splashColor: Colors.grey.withValues(alpha: 0.2),
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 300),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  // Icon(leadingIcon, size: 24),
+                  HugeIcon(icon: leadingIcon, size: 24, color: Colors.black),
+                  SizedBox(width: 12),
 
-                Expanded(
-                  child: Text(
-                    title,
-                    style: TextStyle(fontWeight: .w700, fontSize: 18),
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: TextStyle(fontWeight: .w700, fontSize: 18),
+                    ),
                   ),
-                ),
-                SizedBox(width: 8),
-                if (trailingText != null)
-                  Text(
-                    trailingText!,
-                    style: TextStyle(fontSize: 16, color: Colors.grey, fontWeight: .w500),
+                  SizedBox(width: 8),
+                  if (trailingText != null)
+                    Text(
+                      trailingText!,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                        fontWeight: .w500,
+                      ),
+                    ),
+                  SizedBox(width: 15),
+                  // Icon(
+                  //   Icons.arrow_forward_outlined,
+                  //  size: 16,
+                  //   color: Colors.black,
+                  // ),
+                  HugeIcon(
+                    icon: HugeIcons.strokeRoundedArrowRight02,
+                    size: 14,
+                    color: Colors.black,
                   ),
-                SizedBox(width: 15),
-                // Icon(
-                //   Icons.arrow_forward_outlined,
-                //  size: 16,
-                //   color: Colors.black,
-                // ),
-                HugeIcon(icon: HugeIcons.strokeRoundedArrowRight02,
-                 size: 14,
-                  color: Colors.black,)
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
