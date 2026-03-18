@@ -3,6 +3,9 @@
 A create Profile Page
 
 <img width="200" height="600" alt="Profile UI" src="https://github.com/user-attachments/assets/81021727-ec47-4296-b7e3-5db656b60f42" />
+<img width="200" height="600" alt="image" src="https://github.com/user-attachments/assets/6b231925-b501-44a5-9d9e-abf639de5054" />
+
+
 
 
 
